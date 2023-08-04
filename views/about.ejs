@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
-<%- include('partials/head.ejs') %>
+<%- include('partials/head.ejs',{ title: 'Mi Porfolio - About' }) %>
 
   <body>
-    <%- include('./partials/header.ejs')%>
-      <div class="bgimg-2 mvc-display-container mvc-opacity-min" id="home">
-        <div class="mvc-display-middle" style="white-space: nowrap">
-          <span class="mvc-center mvc-padding-large mvc-black mvc-xlarge mvc-wide mvc-animate-opacity">ABOUT</span>
-        </div>
-      </div>
-
+    <%- include('./partials/header.ejs',{ title: 'About' ,page:'about',clase:'bgimg-2' })%>
       <div class="mvc-content mvc-container mvc-padding-64" id="about">
         <h3 class="mvc-center">I love photography</h3>
         <p class="mvc-center"><em>is a hobby photographer...</em></p>
@@ -28,29 +22,7 @@
         </p>
       </div>
       <%- include('partials/footer.ejs')%>
-
-
-        <script>
-          // Change style of navbar on scroll
-          window.onscroll = function () {
-            myFunction();
-          };
-          function myFunction() {
-            var navbar = document.getElementById("myNavbar");
-            if (
-              document.body.scrollTop > 100 ||
-              document.documentElement.scrollTop > 100
-            ) {
-              navbar.className =
-                "mvc-bar" + " mvc-card" + " mvc-animate-top" + " mvc-white";
-            } else {
-              navbar.className = navbar.className.replace(
-                " mvc-card mvc-animate-top mvc-white",
-                ""
-              );
-            }
-          }
-        </script>
+        <%- include('partials/scripts.ejs') %>
   </body>
 
 </html>
